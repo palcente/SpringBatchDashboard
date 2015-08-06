@@ -4,6 +4,7 @@ package com.sample.javafx.config;
  * Created by matt on 31/07/2015.
  */
 
+import com.sample.javafx.controller.DashBoardController;
 import com.sample.javafx.controller.LoginController;
 import org.apache.log4j.spi.LoggerFactory;
 import org.slf4j.Logger;
@@ -30,6 +31,12 @@ public class SimpleBeanFactory {
     }
 
     @Bean
+    public DashBoardController dashBoardController() {
+        LOGGER.trace("dashboardController fetched");
+        return new DashBoardController();
+    }
+
+    @Bean
     public DriverManagerDataSource driverManagerDataSource() {
         LOGGER.trace("DriverManagerDataSource fetched");
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -37,8 +44,5 @@ public class SimpleBeanFactory {
         return dataSource;
     }
 
-    @Bean
-    public ApplicationContext applicationContext(){
-        return this.context;
-    }
+
 }

@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?language javascript?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.text.Text?>
-<GridPane fx:id="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sample.javafx.controller.LoginController">
-    <children>
 
-        <Label text="JDBC Address:"
-               GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.hgrow="ALWAYS" GridPane.fillWidth="true"/>
-
-        <TextField fx:id="addressField"
-                   GridPane.columnIndex="1" GridPane.rowIndex="1" text="jdbc:oracle:thin:@oracle.fdmgroup.com:1521:xe"/>
-        <Label text="User Name:"
-               GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-
-        <TextField fx:id="usernameField"
-                GridPane.columnIndex="1" GridPane.rowIndex="2" text="mateuszlabuda"/>
-
-        <Label text="Password:"
-               GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-
-        <PasswordField fx:id="passwordField"
-                       GridPane.columnIndex="1" GridPane.rowIndex="3" text="Oracle101"/>
-
-        <Button fx:id="printBtn" text="Login" GridPane.columnIndex="0" GridPane.rowIndex="4" onAction="#print" />
-
-        <Text fx:id="errorMessage" fill="darkred" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-    </children>
-</GridPane>
+<AnchorPane prefHeight="199.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sample.javafx.controller.LoginController">
+   <children>
+      <TextField fx:id="addressField" layoutX="106.0" layoutY="14.0" prefHeight="25.0" prefWidth="305.0" text="jdbc:oracle:thin:@oracle.fdmgroup.com:1521:xe" />
+      <TextField fx:id="usernameField" layoutX="106.0" layoutY="45.0" prefHeight="25.0" prefWidth="305.0" text="mateuszlabuda" />
+      <PasswordField fx:id="passwordField" layoutX="106.0" layoutY="77.0" prefHeight="25.0" prefWidth="305.0" text="Oracle101" />
+      <Label layoutX="16.0" layoutY="18.0" text="Url" />
+      <Label layoutX="16.0" layoutY="49.0" text="Username" />
+      <Label layoutX="18.0" layoutY="81.0" text="Password" />
+      <Button fx:id="login" layoutX="18.0" layoutY="124.0" mnemonicParsing="false" onAction="#authenticate" prefHeight="25.0" prefWidth="78.0" text="Login" />
+      <Label fx:id="errorMessage" layoutX="14.0" layoutY="168.0" textFill="RED" />
+   </children>
+</AnchorPane>
